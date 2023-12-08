@@ -3,7 +3,7 @@ import React from 'react'
 function Nav() {
   return ( 
 
-<div className="navbar bg-base-100 h-12 shadow-md shadow-slate-300">
+<div className="navbar bg-base-100 shadow-md shadow-slate-300">
 
   <div className="flex-none">
     <button className="btn btn-square btn-ghost">
@@ -11,7 +11,7 @@ function Nav() {
     </button>
   </div>
   <div className="flex-1">
-    <a className="btn btn-ghost text-xl"></a>
+    <a className="btn btn-ghost text-xl">Weather-App</a>
   </div>
   <div className="flex-none">
     <button className="btn btn-square btn-ghost">
