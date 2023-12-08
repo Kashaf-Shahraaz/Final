@@ -6,8 +6,7 @@ function App() {
   return (
     <div data-theme="cupcake" className="App">
       <Nav />
-
-
+      <main className="main"></main>
 
 
       <Footer />
