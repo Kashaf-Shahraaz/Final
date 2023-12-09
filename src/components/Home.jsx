@@ -1,23 +1,31 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Home() {
-  return (
-    
-    <div className='homePage min-h-full w-full flex justify-center items-center flex-col bg-[url(https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdlYXRoZXJ8ZW58MHx8MHx8fDA%3D)] bg-no-repeat bg-cover'>
-       
-        {/* <h1 className='title text-white'>Weather</h1> */}
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 bg-transparent">
-      <form className="card-body ">
-        <div className="form-control  ">
-          <input type="text" placeholder="Enter City name" className="input input-bordered" required />
-        </div>
-        <div className="form-control mt-6">
-          <button className="btn btn-primary ">Search</button>
-        </div>
-      </form>
-   </div>
 
+    
+  return (
+    <>
+  <div style={{color:'#001244'}} className='homepageTop text-center flex flex-col justify-center gap-2'>
+    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/weather-report-02-6743897-5528736.png" alt="cloud icon" width={300} />
+   <div className='heading  '>
+   <h1 className='homepageH1 text-3xl font-bold leading-8'>Weather<span className='subheading font-normal'> ForeCasts</span></h1><br />
+   <Link to={'/weatherDetails'}><button style={{color:'#edf2f5'}} className="btn glass w-36 font-semibold hover:glass ">Get Started</button></Link>
+    </div> 
+  </div>
+
+  <div style={{color:'#001244'}} className="card w-full bg-transparent text-neutral-content mt-12">
+  <div className="card-body items-center text-center">
+    <h2 className="card-title text-xl font-bold">Clothing suggestion ?</h2>
+    <p className='card-description text-lg font-medium'>Register to discover .. Or Login if you're an existing user !</p>
+    <div style={{color:'#edf2f5'}} className="card-actions justify-end">
+      <button className="btn btn-ghost bg-sky-700 hover:bg-sky-950 hover:text-sky-200 ">Register</button>
+      <button className="btn btn-ghost bg-sky-700 hover:bg-sky-950 hover:text-sky-200">Login</button>
     </div>
+  </div>
+</div>
+
+    </>
   )
 }
 
