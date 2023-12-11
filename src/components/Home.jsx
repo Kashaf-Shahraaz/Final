@@ -6,10 +6,10 @@ function Home() {
     
   return (
     <>
-  <div style={{color:'#001244'}} className='homepageTop text-center flex flex-col justify-center gap-2'>
+  <div style={{color:'#001244'}} className='homepageTop text-center flex flex-col justify-center gap-1 '>
     <img src="https://cdn3d.iconscout.com/3d/premium/thumb/weather-report-02-6743897-5528736.png" alt="cloud icon" width={300} />
    <div className='heading  '>
-   <h1 className='homepageH1 text-3xl font-bold leading-8'>Weather<span className='subheading font-normal'> ForeCasts</span></h1><br />
+   <h1 className='homepageH1 text-3xl font-bold leading-4'>Weather<span className='subheading font-normal'> ForeCasts</span></h1><br />
    <Link to={'/weatherDetails'}><button style={{color:'#edf2f5'}} className="btn glass w-36 font-semibold hover:glass ">Get Started</button></Link>
     </div> 
   </div>
