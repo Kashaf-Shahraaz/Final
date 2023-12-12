@@ -10,6 +10,10 @@ body{
 #root{
   height: 100%;
   width: 100%;
+  background: #1A2980;  /* fallback for old browsers */
+background: -webkit-linear-gradient(330deg, #26D0CE, #1A2980);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(330deg, #26D0CE, #1A2980); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .App{
   height: 100%;
@@ -22,48 +26,14 @@ body{
 .main{
   height: 100%;
   width: 100%;
-  background-color: #80d0c7;
-  background-image: linear-gradient(180deg, #80d0c7 0%, #3880ad 33%, #016d9d 66%, #010e19 100%);
+  /* background-color: #80d0c7;
+  background-image: linear-gradient(180deg, #80d0c7 0%, #3880ad 33%, #016d9d 66%, #010e19 100%); */
+
+background: #1A2980;  /* fallback for old browsers */
+background: -webkit-linear-gradient(330deg, #26D0CE, #1A2980);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(330deg, #26D0CE, #1A2980); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
   /* color: white; */
 }
 
-.details{
-  height: auto;
-  width: 100%;
-  background-color: chocolate;
-  font-size: 20px;
-  font-weight: 400;
-}
-.detailsIcon{
-  background-color: bisque;
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.details h1{
-  font-size: 50px;
-  font-weight: bold;
-}
-.details p{
-  font-size: 14px;
-  font-weight: 500;
-  /* word-spacing:20px; */
-}
-.detailsPerDay{
-  height: 100px;
-  width: 100%;
-  background-color: blueviolet;
-  
-}
-.detailshumidity{
-  height: 100px;
-  width: 100%;
-  background-color: burlywood;
-}
-.detailsSun{
-  height: 111px;
-  width: 100%;
-  background-color: chartreuse;
-}

@@ -18,7 +18,7 @@ function DetailedWeather() {
    }        
 
   return (
-    <div className='homePage min-h-full w-full flex justify-between items-center flex-col  bg-no-repeat bg-cover'>
+    <div className='homePage min-h-full w-full flex justify-between items-center flex-col  bg-no-repeat bg-cover gap-y-2'>
          {/* <div className='homePage min-h-full w-full flex justify-center items-center flex-col  bg-no-repeat bg-cover bg-[url(https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] '></div> */}
     <div className="card shrink-0 w-full max-w-sm bg-transparent absolute top-16 text-center ">
       <form onSubmit={submitHandler} className="card-body flex flex-row">
@@ -32,39 +32,64 @@ function DetailedWeather() {
       </form>
    </div>
    
-   <div className='details absolute top-36 flex flex-col justify-center items-center'>
-
-   {data && <> 
-      <div className='detailsIcon'>    
+   {/* {data && <> 
       <img src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}alt="weathericon" width={200}/>
-      </div>
       <h1>{data && Math.round(data.main.temp )+ "°C"}</h1>
       <h2>{data && data.weather[0].description}</h2>
       <p>Feels like : {data && Math.round(data.main.feels_like)+ "°C"}</p>
     <p>Max : {data && Math.round(data.main.temp_max)+"°C"} Min : {data && Math.round(data.main.temp_min)+ "°C"}</p>
-   </>}
+   </>} */}
+ 
+{data && 
+ <div className="card w-screen h-fit glass mt-24"> 
+ <figure className="px-10 pt-10">
+    <img src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="weathericon" width={100} className="rounded-xl" />
+ </figure>
+  <div className="card-body items-center text-center ">
+    <h1 className="card-title text-6xl font-bold">{data && Math.round(data.main.temp )+ "°C"}</h1>
+    <p>{data.weather[0].description}</p>
+    <p className='card-description text-lg font-normal'>Feels like: {data && Math.round(data.main.feels_like)+ "°C"}</p>
+    <div className="card-actions">
+      <button className="btn btn-primary">Max : {data && Math.round(data.main.temp_max)+"°C"}</button>
+      <button className="btn btn-primary">Min : {data && Math.round(data.main.temp_min)+ "°C"}</button>
+    </div>
 
-   {/* <div className='detailsPerDay'>
-    <p>Visibility : {data && (data.visibility)+ "m"}</p>
-   </div> */}
-
-   {/* <div className='detailshumidity'>
-     Humidity & pressure
-      <p>Pressure : {data && Math.round(data.main.pressure)+ "hPa"}</p>
-      <p>Humidity : {data && (data.main.humidity)+ "%"}</p>
-   </div> */}
     
-   <div className='detailsSun'>
-    <div className='sun'>
-        {/* <h2>{data && (data.sys.sunrise)}</h2> */}
-    </div>
-    <div> uv index </div>
-   </div>
+      {/* <p>Pressure: {data && (data.main.pressure)+ "hPa"}</p>
+      <p>Humidity: {data && (data.main.humidity)+ "%"}</p> */}
+  </div>
+</div>
+}
+ {data && <div className="card-body w-screen h-52 flex flex-row justify-around text-center rounded-xl gap-y-5 p-0">
 
-   </div>
+<div className="card w-2/4 h-36 glass items-center shadow-xl">
+  <div className="card-body">
+    <h2 className="card-title">Pressure</h2>
+    <p>{data && (data.main.pressure)+ "hPa"}</p>
+  </div>
+</div>
 
-   
+<div className="card w-2/4 h-36 glass items-center shadow-xl">
+  <div className="card-body">
+    <h2 className="card-title">Humidity</h2>
+    <p>{data && (data.main.humidity)+ "%"}</p>
+  </div>
+</div>
+</div>}
+
+{/* {data && <div className="card-body w-screen glass h-2">
+
+<div className="card w-screen h-2 glass items-center shadow-xl">
+  <div className="card-body">
+    <h2 className="card-title">Visibility</h2>
+    <p>{data && (data.visibility)+ "m"}</p>
+  </div>
+</div>
+
+  </div>} */}
+
     </div>
+
     
   )
 }
