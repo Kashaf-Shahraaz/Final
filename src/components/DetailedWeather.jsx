@@ -44,15 +44,15 @@ function DetailedWeather() {
     <p>Max : {data && Math.round(data.main.temp_max)+"°C"} Min : {data && Math.round(data.main.temp_min)+ "°C"}</p>
    </>}
 
-   <div className='detailsPerDay'>
+   {/* <div className='detailsPerDay'>
     <p>Visibility : {data && (data.visibility)+ "m"}</p>
-   </div>
+   </div> */}
 
-   <div className='detailshumidity'>
+   {/* <div className='detailshumidity'>
      Humidity & pressure
       <p>Pressure : {data && Math.round(data.main.pressure)+ "hPa"}</p>
       <p>Humidity : {data && (data.main.humidity)+ "%"}</p>
-   </div>
+   </div> */}
     
    <div className='detailsSun'>
     <div className='sun'>
