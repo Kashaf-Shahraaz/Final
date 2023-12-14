@@ -17,7 +17,7 @@ function loginHandler(e){
 { 
   console.log( "user has logged in" );
   setIsLoggedIn(true)
- navigate('/clothingSuggestions')
+ navigate('/userDetails')
 }
 
 function gotError( err ) // see more on error handling
