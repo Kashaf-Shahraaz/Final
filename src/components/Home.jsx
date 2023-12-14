@@ -2,8 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Home() {
-
-    
+      
   return (
     <>
   <div style={{color:'#001244'}} className='homepageTop text-center flex flex-col justify-center gap-1 '>

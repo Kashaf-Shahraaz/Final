@@ -13,7 +13,8 @@ function ClothingSuggestions({city, setCity, data, setdata, gender}) {
       .then((res) => setdata(res.data))
       .catch((error) => console.log(error));
   }
-    
+   
+  // Changing background with changing weather conditions
   let bg = "";  
    
   if(data && data.weather[0].main === "Clear"){
@@ -38,41 +39,38 @@ function ClothingSuggestions({city, setCity, data, setdata, gender}) {
     bg = "";
   }
 
-  
+  //  Changing clothing suggestions based on gender type
   let pic = "";
-   if(gender === "Female" && (data && data.main.temp < 10) || (data && data.weather[0].main === "Rain")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/1.png?updatedAt=1702516519045"
-   } else if (gender === "Male" && (data && data.main.temp < 10) || (data && data.weather[0].main === "Rain")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/2.png?updatedAt=1702516697366"
-   } else if (gender === "Female" && (data && data.main.temp > 10)){
-    pic = "https://ik.imagekit.io/xecjx9x1o/3.png?updatedAt=1702516697320"
-   } else if (gender === "Male" && (data && data.main.temp > 10)){
-    pic = "https://ik.imagekit.io/xecjx9x1o/4.png?updatedAt=1702516697273"
-   } else if (gender === "Female" && (data && data.main.temp >= 25) || (data && data.weather[0].main === "Clear")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/5.png?updatedAt=1702516697305"
-   }else if (gender === "Male" && (data && data.main.temp >= 25) || (data && data.weather[0].main === "Clear")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/6.png?updatedAt=1702516697225"
-   }else if (gender === "Female" && (data && data.weather[0].main === "Cloudy")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/7.png?updatedAt=1702516697283"
-   }else if (gender === "Male" && (data && data.weather[0].main === "Cloudy")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/8.png?updatedAt=1702516697152"
-   }else if (gender === "Female" && (data && data.main.temp <= 5) || (data && data.weather[0].main === "Windy")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/9.png?updatedAt=1702516697358"
-   }else if (gender === "Male" && (data && data.main.temp <= 5) || (data && data.weather[0].main === "Windy")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/10.png?updatedAt=1702516697276"
-   }else if (gender === "Female" && (data && data.main.temp <= 1) && (data && data.weather[0].main === "Snow")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/11.png?updatedAt=1702516697427"
-   }else if (gender === "Male" && (data && data.main.temp <= 1) && (data && data.weather[0].main === "Snow")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/12.png?updatedAt=1702516698631"
-   }else if (gender === "Female" && (data && data.main.temp <= -1) && (data && data.weather[0].main === "Snow")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/13.png?updatedAt=1702516698922"
-   }else if (gender === "Male" && (data && data.main.temp <= -1) && (data && data.weather[0].main === "Snow")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/14.png?updatedAt=1702516698916"
-   } else if(gender === "Female" && (data && data.main.temp > 10) && (data && data.weather[0].main === "Clear")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/5.png?updatedAt=1702516697305"
-   } else if(gender === "Male" && (data && data.main.temp > 10) && (data && data.weather[0].main === "Clear")){
-    pic = "https://ik.imagekit.io/xecjx9x1o/6.png?updatedAt=1702516697225"
-   }
+   if (gender === "Female" && ( data && ((data.weather[0].main === "Clouds") || (data.weather[0].main === "Rain") && (data.main.temp >= 10)))){
+    pic = "https://ik.imagekit.io/xecjx9x1o/7.png?updatedAt=1702516697283";
+   } else if (gender === "Male" && (data && ((data.weather[0].main === "Clouds") || (data.weather[0].main === "Rain") && (data.main.temp > 10)))){
+    pic = "https://ik.imagekit.io/xecjx9x1o/8.png?updatedAt=1702516697152";
+  }  else if (gender === "Female" && (data && ((data.weather[0].main === "Clouds") || (data.weather[0].main === "Rain") && (data.main.temp <= 5)))){
+    pic = "https://ik.imagekit.io/xecjx9x1o/1.png?updatedAt=1702516519045";
+  }  else if (gender === "Male" && (data && ((data.weather[0].main === "Clouds") || (data.weather[0].main === "Rain") && (data.main.temp <= 5)))){
+    pic = "https://ik.imagekit.io/xecjx9x1o/2.png?updatedAt=1702516697366";
+  }  else if (gender === "Female" && (data && data.weather[0].main === "Drizzle")){
+    pic = "https://ik.imagekit.io/xecjx9x1o/7.png?updatedAt=1702516697283";
+  }  else if (gender === "Male" && (data && data.weather[0].main === "Drizzle")){
+    pic = "https://ik.imagekit.io/xecjx9x1o/8.png?updatedAt=1702516697152";
+  }  else if (gender === "Female" && (data && ((data.weather[0].main === "Snow") && (data.main.temp <= 10)))){
+    pic = "https://ik.imagekit.io/xecjx9x1o/9.png?updatedAt=1702516697358";
+  }  else if (gender === "Male" && (data && ((data.weather[0].main === "Snow") && (data.main.temp <= 10)))){
+    pic = "https://ik.imagekit.io/xecjx9x1o/10.png?updatedAt=1702516697276";
+  }  else if (gender === "Female" && (data && ((data.weather[0].main === "Snow") && (data.main.temp <= 5)))){
+    pic = "https://ik.imagekit.io/xecjx9x1o/11.png?updatedAt=1702516697427";
+  }  else if (gender === "Male" && (data &&( (data.weather[0].main === "Snow") && (data.main.temp <= 5)))){
+    pic = "https://ik.imagekit.io/xecjx9x1o/12.png?updatedAt=1702516698631";
+  }  else if (gender === "Female" && (data && ((data.weather[0].main === "Snow") && (data.main.temp <= 0) || (data.weather[0].description === "heavy snow")))){
+    pic = "https://ik.imagekit.io/xecjx9x1o/13.png?updatedAt=1702516698922";
+  }  else if (gender === "Male" && (data && ((data.weather[0].main === "Snow") && (data.main.temp <= 0) || (data.weather[0].description === "heavy snow")))){
+    pic = "https://ik.imagekit.io/xecjx9x1o/14.png?updatedAt=1702516698916";
+  }  else if(gender === "Female" && (data && ((data.weather[0].main === "Clear") && (data.main.temp > 10)))){
+    pic = "https://ik.imagekit.io/xecjx9x1o/5.png?updatedAt=1702516697305";
+  }  else {
+    pic = "https://ik.imagekit.io/xecjx9x1o/6.png?updatedAt=1702516697225";
+  }
+ 
 
   return (
     <div className={`homePage min-h-screen w-screen flex justify-between items-center flex-col  bg-no-repeat bg-cover gap-y-2 p-5 pb-8 ${bg}`}>

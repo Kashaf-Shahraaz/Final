@@ -2,10 +2,7 @@ import React from "react";
 import axios from "axios";
 
 function DetailedWeather({city, setCity, data, setdata}) {
- 
- 
-
-
+  
   // const [currentDate, setCurrentDate] = useState();
   // function getDate() {
   //   const today = new Date(1702479367);

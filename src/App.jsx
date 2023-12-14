@@ -22,6 +22,7 @@ function App() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isOpen, setIsopen] = useState(false);
   const [city, setCity] = useState("");
   const [data, setdata] = useState("");
   const [gender, setGender] = useState()
@@ -29,7 +30,7 @@ function App() {
   return (
     <div data-theme="cupcake" className="App">
       {/* Navbar */}
-      <Nav isLoggedIn = {isLoggedIn} />
+      <Nav isLoggedIn = {isLoggedIn} isOpen={isOpen} setIsopen={setIsopen}/>
 
       {/* Main section */}
       <main className="main ">
