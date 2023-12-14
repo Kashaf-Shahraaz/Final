@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function UserDetails() {
+function UserDetails({gender, setGender}) {
     const navigate = useNavigate();
-    const [gender, setGender] = useState()
+    // const [gender, setGender] = useState()
 
     // function clickHandler(){ 
 
@@ -11,10 +11,11 @@ function UserDetails() {
     //  }
 
     function changeHandler(e){    
-
+     setGender((i) => e.target.value)
         // console.log(e.target.value);
 
-        e.target.value === ("Female" || "Male")? navigate('/clothingSuggestions')  : alert("select gender")
+     gender === ("Female") || ("Male") ? navigate('/clothingSuggestions') : alert("select gender")
+
     }
 
 
@@ -28,13 +29,13 @@ function UserDetails() {
       <p className="py-6">Helps us suggest you suitable clothing</p>
     </div>
     <div className="card shrink-0 w-full h-44 max-w-sm shadow-2xl glass flex justify-center items-center">
-         <form className="form-control w-fit max-w-xs"> 
+         {/* <form className="form-control w-fit max-w-xs">  */}
            <select required onChange={changeHandler} className="select select-bordered">
              <option disabled selected>Select your Gender</option>
              <option>Female</option>
              <option>Male</option>
            </select>
-         </form>
+         {/* </form> */}
         <div className="form-control mt-6">
           <button onClick={clickHandler} className="btn btn-primary">Get Suggestion</button>
         </div>

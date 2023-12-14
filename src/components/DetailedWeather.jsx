@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 
-function DetailedWeather() {
-  const [city, setCity] = useState("");
-  const [data, setdata] = useState("");
+function DetailedWeather({city, setCity, data, setdata}) {
+ 
  
 
 
@@ -38,23 +37,23 @@ function DetailedWeather() {
   
    let bg = "";  
    
-   if(data && data.weather[0].main == "Clear"){
+   if(data && data.weather[0].main === "Clear"){
       bg = "clearSky";
-   } else if (data && data.weather[0].main == "Clouds"){
+   } else if (data && data.weather[0].main === "Clouds"){
       bg = "clouds";
-   } else if (data && data.weather[0].main == "Thunderstorm"){
+   } else if (data && data.weather[0].main === "Thunderstorm"){
       bg = "thunderstorm";
-   } else if (data && data.weather[0].main == "Drizzle"){
+   } else if (data && data.weather[0].main === "Drizzle"){
     bg = "drizzle";
-   } else if (data && data.weather[0].main == "Rain"){
+   } else if (data && data.weather[0].main === "Rain"){
     bg = "rain";
-   } else if (data && data.weather[0].main == "Snow"){
+   } else if (data && data.weather[0].main === "Snow"){
      bg = "snow";
-   } else if (data && data.weather[0].main == "Mist"){
+   } else if (data && data.weather[0].main === "Mist"){
      bg = "mist";
-   } else if (data && data.weather[0].main == "Haze"){
+   } else if (data && data.weather[0].main === "Haze"){
      bg = "haze";
-   } else if (data && data.weather[0].main == "Dust"){
+   } else if (data && data.weather[0].main === "Dust"){
      bg = "dust";
    } else {
      bg = "";
@@ -83,7 +82,7 @@ function DetailedWeather() {
       </div>
 
       {data && (
-        <div className="card w-full h-fit glass mt-14">
+        <div className="card w-full h-fit  mt-14">
           {data && (
             <div className="card-body w-full h-2 justify-center items-center text-center rounded-xl">
               <h2>Today's Date: </h2>
