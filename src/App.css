@@ -39,8 +39,8 @@ overflow-y: scroll;
 }
 
 .sidebar {
-  width: 100%;
-  height: 15%;
+  width: 50%;
+  height: 100%;
   box-shadow: 0px 4px 8px rgb(0 0 0 / 16%);
   background-color: rgba(255, 255, 255, 0.062);
   backdrop-filter: blur(5px);
@@ -51,8 +51,7 @@ overflow-y: scroll;
   transition: 0.5s;
 }
 .sidebar.active {
-  left: 0;
-  
+  left: 0;  
 }
 .sd-header {
   display: flex;
@@ -63,7 +62,7 @@ overflow-y: scroll;
 .sidebar-overlay {
   position: absolute;
   top: 0;
-  /* left: 0; */
+  left: 0;
   width: 80%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -83,10 +82,11 @@ overflow-y: scroll;
 }
 .sd-body ul {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
   width: 50%;
-  margin-bottom: 0;
-  padding: 0;
+  /* margin-bottom: 0;
+  padding: 0; */
 }
 .sd-link {
   margin-bottom: 8px;
@@ -132,4 +132,30 @@ overflow-y: scroll;
 .sd-body ul li:hover::after {
   transform-origin: left;
   transform: scale(1);
+}
+.clearSky{
+background-image: url("https://images.unsplash.com/photo-1601297183305-6df142704ea2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+.clouds{
+background-image: url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+.thunderstorm{
+  background-image: url("https://static.vecteezy.com/system/resources/previews/027/830/258/large_2x/lightning-strikes-on-a-cloudy-dramatic-stormy-sky-ai-generated-free-photo.jpg");
+}
+.drizzle{
+  background-image: url("https://services.meteored.com/img/article/o-que-significa-realmente-a-percentagem-de-chuva-numa-aplicacao-do-tempo-meteorologia-1679524320171_1280.jpg");
+}
+.rain{
+  background-image: url("https://img.rasset.ie/0014ae8c-500.jpg");
+}.snow{
+  background-image: url("https://img.rasset.ie/0014ae8c-500.jpg");
+}
+.mist{
+  background-image: url("https://img.rasset.ie/0014ae8c-500.jpg");
+}
+.haze{
+  background-image: url("https://www.komar.de/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/I/F/IFSH4-073.jpg");
+}
+.dust{
+  background-image: url("https://www.komar.de/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/I/F/IFSH4-073.jpg");
 }

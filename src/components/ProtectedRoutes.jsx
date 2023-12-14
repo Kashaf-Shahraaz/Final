@@ -1,14 +1,20 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
-function ProtectedRoutes() {
-  // const navigate = useNavigate()
+function ProtectedRoutes({ isLoggedIn, children }) {
+  const navigate = useNavigate();
 
-  // if(!isLoggedIn){
-  //   navigate('/')
-  // }
-  return (
-    <div>ProtectedRoutes</div>
-  )
+  function clickHandler(){
+    navigate('/')
+  }
+  if (!isLoggedIn) {
+    return <button onClick={clickHandler} className="btn btn-primary">You need to log in !</button>
+     
+   
+  
+  } else {
+    return <> {children} </>;
+  }
 }
 
 export default ProtectedRoutes

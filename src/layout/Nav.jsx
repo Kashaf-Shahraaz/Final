@@ -66,9 +66,11 @@ function clickHandler(){
         </div> */}
         <div className="sd-body">
           <ul>
-            <Link to={"/"}><li className="sd-link"><button>Home</button></li></Link>
-            <Link to={"/weatherDetails"}><li className="sd-link"><button>Weather Forecast</button></li></Link>
-            <Link to={"/clothingSuggestions"}><li className="sd-link"><button>Clothing suggestions</button></li></Link>
+            <Link to={"/"}><li className="sd-link">Home</li></Link>
+            <Link to={"/weatherDetails"}><li className="sd-link">Weather Forecast</li></Link>
+            <Link to={"/userDetails"}><li className="sd-link">User Details</li></Link>
+            <Link to={"/clothingSuggestions"}><li className="sd-link">Clothing suggestions</li></Link>
+
           
           </ul>
         </div>

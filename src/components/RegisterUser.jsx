@@ -30,7 +30,7 @@ function gotError( err ) // see more on error handling
 let user = new Backendless.User();
 user.email = email;
 user.password = password;
-console.log(user);
+// console.log(user);
 Backendless.UserService.register( user ).then( userRegistered ).catch( gotError );
 
     }

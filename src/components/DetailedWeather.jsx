@@ -33,15 +33,35 @@ function DetailedWeather() {
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => setdata(res.data))
-      .catch((error) => console.log(error));
-      // var condition =true
-      // if (condition) {
-      //   pic = 'https://img.freepik.com/premium-photo/night-sky-full-falling-snowflakes_303714-1440.jpg'
-      // }
-
+      .catch((error) => console.log(error));  
   }
+  
+   let bg = "";  
+   
+   if(data && data.weather[0].main == "Clear"){
+      bg = "clearSky";
+   } else if (data && data.weather[0].main == "Clouds"){
+      bg = "clouds";
+   } else if (data && data.weather[0].main == "Thunderstorm"){
+      bg = "thunderstorm";
+   } else if (data && data.weather[0].main == "Drizzle"){
+    bg = "drizzle";
+   } else if (data && data.weather[0].main == "Rain"){
+    bg = "rain";
+   } else if (data && data.weather[0].main == "Snow"){
+     bg = "snow";
+   } else if (data && data.weather[0].main == "Mist"){
+     bg = "mist";
+   } else if (data && data.weather[0].main == "Haze"){
+     bg = "haze";
+   } else if (data && data.weather[0].main == "Dust"){
+     bg = "dust";
+   } else {
+     bg = "";
+   }
+
   return (
-    <div className="homePage min-h-screen w-screen flex justify-between items-center flex-col  bg-no-repeat bg-cover gap-y-2 p-2 pb-8 ">
+    <div className={`homePage min-h-screen w-screen flex justify-between items-center flex-col  bg-no-repeat bg-cover gap-y-2 p-5 pb-8 ${bg}`}>
       <div className="card shrink-0 w-fit max-w-sm bg-transparent absolute top-16 text-center mt-2 ">
         <form
           onSubmit={submitHandler}

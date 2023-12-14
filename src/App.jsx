@@ -11,6 +11,7 @@ import { useState } from 'react';
 import UserDetails from './components/UserDetails';
 import ClothingSuggestions from './components/ClothingSuggestions';
 import Error from './components/Error';
+import ProtectedRoutes from './components/ProtectedRoutes';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [isLoggedIn, setIsLoggedIn] = useState('')
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   return (
     <div data-theme="cupcake" className="App">
@@ -35,13 +36,17 @@ function App() {
           <Route path='/weatherDetails' element = {<DetailedWeather />} />
           <Route path='/registerUser' element = {<RegisterUser email={email} setEmail={setEmail} password={password} setPassword={setPassword} />} />
           <Route path='/loginUser' element = {<LoginUser email={email} setEmail={setEmail} password={password} setPassword={setPassword} setIsLoggedIn = {setIsLoggedIn}  />} />
-          <Route path='/userDetails' element = {<UserDetails />} />
-          {/* <Route path='/clothingSuggestions' element ={
-          <ProtectedRoutes isLoggedIn={isLoggedIn} >
-            <ClothingSuggestions city={city}  setCity={ setCity} data={data} setdata={setdata} />
-          </ProtectedRoutes>}/> */}
 
-          <Route path='/clothingSuggestions' element={<ClothingSuggestions />}/>
+          <Route path='/userDetails' element ={
+          <ProtectedRoutes isLoggedIn={isLoggedIn} >
+           <UserDetails />
+          </ProtectedRoutes>}/>
+
+          <Route path='/clothingSuggestions' element ={
+          <ProtectedRoutes isLoggedIn={isLoggedIn} >
+            <ClothingSuggestions />
+          </ProtectedRoutes>}/>
+
           <Route path='/*' element={<Error />}/>
             
         </Routes>

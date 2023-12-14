@@ -14,15 +14,37 @@ function ClothingSuggestions() {
     )
       .then((res) => setdata(res.data))
       .catch((error) => console.log(error));
-      // var condition =true
-      // if (condition) {
-      //   pic = 'https://img.freepik.com/premium-photo/night-sky-full-falling-snowflakes_303714-1440.jpg'
-      // }
-
   }
+    
+  let bg = "";  
+   
+  if(data && data.weather[0].main == "Clear"){
+     bg = "clearSky";
+  } else if (data && data.weather[0].main == "Clouds"){
+     bg = "clouds";
+  } else if (data && data.weather[0].main == "Thunderstorm"){
+     bg = "thunderstorm";
+  } else if (data && data.weather[0].main == "Drizzle"){
+   bg = "drizzle";
+  } else if (data && data.weather[0].main == "Rain"){
+   bg = "rain";
+  } else if (data && data.weather[0].main == "Snow"){
+    bg = "snow";
+  } else if (data && data.weather[0].main == "Mist"){
+    bg = "mist";
+  } else if (data && data.weather[0].main == "Haze"){
+    bg = "haze";
+  } else if (data && data.weather[0].main == "Dust"){
+    bg = "dust";
+  } else {
+    bg = "";
+  }
+
+  
+  const pic = "https://ik.imagekit.io/xecjx9x1o/2.png?updatedAt=1702516697366";
   return (
-    <div className="homePage min-h-screen w-screen flex justify-between items-center flex-col  bg-no-repeat bg-cover gap-y-2 p-2 pb-8 ">
-      <div className="card shrink-0 w-fit max-w-sm bg-transparent absolute top-16 text-center mt-2 ">
+    <div className={`homePage min-h-screen w-screen flex justify-between items-center flex-col  bg-no-repeat bg-cover gap-y-2 p-5 pb-8 ${bg}`}>
+      <div className="card shrink-0 w-fit max-w-sm bg-transparent absolute top-16 text-center mt-2">
         <form
           onSubmit={submitHandler}
           className="card-body flex flex-row h-fit justify-center items-center p-0 "
@@ -124,15 +146,16 @@ function ClothingSuggestions() {
 
       {data && (
         <div className="card w-full h-fit glass">
-        <figure className='figure w-fit h-fit rounded-xl'><img src="https://ik.imagekit.io/xecjx9x1o/1.png?updatedAt=1702516519045" alt="rain clothes"/></figure>
+        <figure className='figure w-fit h-fit rounded-xl'><img src={`${pic}`} alt="rain clothes"/></figure>
         {/* <figure className='figure w-fit h-fit rounded-xl'><img src="https://ik.imagekit.io/xecjx9x1o/2.png?updatedAt=1702516697366" alt="rain clothes"/></figure> */}
 
         {/* <div className="card-body">
-          <h2 className="card-title">Life hack</h2>
-          <p>How to park your car at your garage?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Learn now!</button>
-          </div>
+          <h2 className="card-title">Description:</h2>
+          <ol>
+            <li>1. umbrella</li>
+            <li>2. Rain Jacket</li>
+            <li>3. Rain boots</li>
+          </ol>
         </div> */}
       </div>
       )}
