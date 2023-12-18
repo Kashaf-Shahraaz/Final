@@ -25,7 +25,10 @@ function App() {
   const [isOpen, setIsopen] = useState(false);
   const [city, setCity] = useState("");
   const [data, setdata] = useState("");
+  const [time, setTime] = useState()
   const [gender, setGender] = useState()
+  const [sunrise, setSunrise] = useState()
+  const [sunset, setSunset] = useState()
 
   return (
     <div data-theme="cupcake" className="App">
@@ -37,7 +40,7 @@ function App() {
         
         <Routes>
           <Route path='/' element = {<Home />} />
-          <Route path='/weatherDetails' element = {<DetailedWeather city={city} setCity={setCity} data={data} setdata={setdata}/>} />
+          <Route path='/weatherDetails' element = {<DetailedWeather city={city} setCity={setCity} data={data} setdata={setdata} sunrise={sunrise} setSunrise={setSunrise} sunset={sunset} setSunset={setSunset} time={time} setTime={setTime }/>} />
           <Route path='/registerUser' element = {<RegisterUser email={email} setEmail={setEmail} password={password} setPassword={setPassword} />} />
           <Route path='/loginUser' element = {<LoginUser email={email} setEmail={setEmail} password={password} setPassword={setPassword} setIsLoggedIn = {setIsLoggedIn}  />} />
 
@@ -48,7 +51,7 @@ function App() {
 
           <Route path='/clothingSuggestions' element ={
           <ProtectedRoutes isLoggedIn={isLoggedIn} >
-            <ClothingSuggestions city={city} setCity={setCity} data={data} setdata={setdata} gender={gender} setGender={setGender} />
+            <ClothingSuggestions city={city} setCity={setCity} data={data} setdata={setdata} gender={gender} setGender={setGender}  sunrise={sunrise} setSunrise={setSunrise} sunset={sunset} setSunset={setSunset} time={time} setTime={setTime }/>
           </ProtectedRoutes>}/>
 
           <Route path='/*' element={<Error />}/>
@@ -56,8 +59,6 @@ function App() {
         </Routes>
        
       </main>
-
-
 
       {/* Footer */}
       <Footer />

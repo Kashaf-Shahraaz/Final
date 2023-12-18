@@ -1,43 +1,45 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-body{
+body {
   height: 100vh;
   width: 100vw;
 }
-#root{
+#root {
   height: 100%;
   width: 100%;
-  background: #1A2980;  /* fallback for old browsers */
-background: -webkit-linear-gradient(330deg, #26D0CE, #1A2980);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(330deg, #26D0CE, #1A2980); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: rgb(3, 7, 17);
+  background: linear-gradient(
+    180deg,
+    rgba(3, 7, 17, 1) 0%,
+    rgba(0, 59, 125, 1) 37%,
+    rgba(0, 161, 238, 1) 100%
+  );
 }
-.App{
+.App {
   height: 100%;
   width: 100%;
-  /* background-color: burlywood; */
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
-.main{
+.main {
   height: 100%;
   width: 100%;
-  /* background-color: #80d0c7;
-  background-image: linear-gradient(180deg, #80d0c7 0%, #3880ad 33%, #016d9d 66%, #010e19 100%); */
-
-background: #1A2980;  /* fallback for old browsers */
-background: -webkit-linear-gradient(330deg, #26D0CE, #1A2980);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(330deg, #26D0CE, #1A2980); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-overflow-y: scroll;
-
-
-  /* color: white; */
+  background: rgb(3, 7, 17);
+  background: linear-gradient(
+    180deg,
+    rgba(3, 7, 17, 1) 0%,
+    rgba(0, 59, 125, 1) 37%,
+    rgba(0, 161, 238, 1) 100%
+  );
+  
+  /* overflow-y: scroll; */
 }
 
+/** menu button in navbar */
 .sidebar {
   width: 50%;
   height: 100%;
@@ -51,7 +53,7 @@ overflow-y: scroll;
   transition: 0.5s;
 }
 .sidebar.active {
-  left: 0;  
+  left: 0;
 }
 .sd-header {
   display: flex;
@@ -82,9 +84,10 @@ overflow-y: scroll;
 }
 .sd-body ul {
   display: flex;
+  gap: 20px;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
+  width: 100%;
   /* margin-bottom: 0;
   padding: 0; */
 }
@@ -93,24 +96,24 @@ overflow-y: scroll;
   display: flex;
   width: 100%;
   padding: 10px 16px;
-  color: #fff;
-  border-radius: 4px;
+  color: #ffffff;
+  /* border-radius: 50px; */
   cursor: pointer;
 }
 .nav_link.active {
   color: #001244;
+
 }
 .nav_link {
   color: #001244;
   font-size: 18px;
 }
-    
 .sd-body ul li {
   display: inline-block;
   text-align: center;
   position: relative;
   font-size: 18px;
-  color: #001244;
+  color: #fff;
   text-decoration: none;
   min-width: 80px;
   font-weight: 600;
@@ -121,41 +124,63 @@ overflow-y: scroll;
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #fff ;
+  background-color: #fff;
   bottom: -5px;
   left: 0;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform .5s;
+  transition: transform 0.5s;
 }
-
 .sd-body ul li:hover::after {
   transform-origin: left;
   transform: scale(1);
 }
-.clearSky{
-background-image: url("https://images.unsplash.com/photo-1601297183305-6df142704ea2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+/**Background images */
+.clearSky {
+  background-image: url("https://images.unsplash.com/photo-1601297183305-6df142704ea2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
-.clouds{
-background-image: url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+.clouds {
+  background-image: url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
-.thunderstorm{
+.thunderstorm {
   background-image: url("https://static.vecteezy.com/system/resources/previews/027/830/258/large_2x/lightning-strikes-on-a-cloudy-dramatic-stormy-sky-ai-generated-free-photo.jpg");
 }
-.drizzle{
+.drizzle {
   background-image: url("https://services.meteored.com/img/article/o-que-significa-realmente-a-percentagem-de-chuva-numa-aplicacao-do-tempo-meteorologia-1679524320171_1280.jpg");
 }
-.rain{
-  background-image: url("https://img.rasset.ie/0014ae8c-500.jpg");
-}.snow{
+.rain {
   background-image: url("https://img.rasset.ie/0014ae8c-500.jpg");
 }
-.mist{
+.snow {
   background-image: url("https://img.rasset.ie/0014ae8c-500.jpg");
 }
-.haze{
+.mist {
+  background-image: url("https://img.rasset.ie/0014ae8c-500.jpg");
+}
+.haze {
   background-image: url("https://www.komar.de/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/I/F/IFSH4-073.jpg");
 }
-.dust{
+.dust {
   background-image: url("https://www.komar.de/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/I/F/IFSH4-073.jpg");
+}
+.fog {
+  background-image: url("https://images.pexels.com/photos/45222/forest-fog-nature-winter-45222.jpeg?cs=srgb&dl=pexels-pixabay-45222.jpg&fm=jpg");
+}
+/* .default {
+  background-image: url("https://en.ammonnews.net/img/big/202079643RN572.jpeg?medium");
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+@media only screen and (min-width: 768px) {
+  .sidebar {
+    width: 25%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .sidebar {
+    width: 20%;
+  }
 }

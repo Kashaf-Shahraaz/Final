@@ -49,19 +49,19 @@ function clickHandler(){
     </button> 
   </div>
   <div className="flex-1">
-    <a onClick={clickHandler} className="btn btn-ghost text-sm ">Weather-App</a>
+    <a onClick={clickHandler} className="btn btn-ghost text-sm md:text-xl font-medium">Weather-App</a>
   </div>
   <div className="flex-none">
  { isLoggedIn ? <button onClick={logoutUser} className="btn btn-active btn-primary">Logout</button> : <></> }
   </div>
 
   <div className={`sidebar ${isOpen === true ? "active" : ""}`}>
-        <div className="sd-body">
+        <div className="sd-body md:text-3xl">
           <ul>
-            <Link to={"/"}><li className="sd-link">Home</li></Link>
-            <Link to={"/weatherDetails"}><li className="sd-link">Weather Forecast</li></Link>
-            <Link to={"/userDetails"}><li className="sd-link">User Details</li></Link>
-            <Link to={"/clothingSuggestions"}><li className="sd-link">Clothing suggestions</li></Link>
+            <Link to={"/"}><li className="sd-link glass">Home</li></Link>
+            <Link to={"/weatherDetails"}><li className="sd-link glass">Weather Forecast</li></Link>
+            <Link to={"/userDetails"}><li className="sd-link glass">User Details</li></Link>
+            <Link to={"/clothingSuggestions"}><li className="sd-link glass">Clothing suggestions</li></Link>
 
           
           </ul>

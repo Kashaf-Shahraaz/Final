@@ -12,19 +12,16 @@ function UserDetails({gender, setGender}) {
 
     function changeHandler(e){    
      setGender((i) => e.target.value)
-        // console.log(e.target.value);
-
      gender === ("Female") || ("Male") ? navigate('/clothingSuggestions') : alert("select gender")
-
     }
 
 
   function clickHandler(){
   }
   return (
-    <div className="hero min-h-full ">
-  <div className="hero-content flex-col lg:flex-row-reverse gap-0">
-    <div className="text-center lg:text-left">
+    <div className="hero min-h-full md:h-full md:flex md:justify-center md:items-center">
+  <div className="hero-content flex-col lg:flex-col gap-0">
+    <div style={{color:'#fff'}} className="text-center lg:text-left">
       <h1 className="text-4xl font-bold">Enter your Details</h1>
       <p className="py-6">Helps us suggest you suitable clothing</p>
     </div>
@@ -37,7 +34,7 @@ function UserDetails({gender, setGender}) {
            </select>
          {/* </form> */}
         <div className="form-control mt-6">
-          <button onClick={clickHandler} className="btn btn-primary">Get Suggestion</button>
+          <button style={{color:'#fff'}} onClick={clickHandler} className="btn btn-primary">Get Suggestion</button>
         </div>
         </div>
      
