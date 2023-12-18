@@ -22,15 +22,15 @@ function clickHandler(){
   function logoutUser(){
     function userLoggedOut()
     {
-      console.log( "user has been logged out" );
+      // console.log( "user has been logged out" );
       navigate('/')
   
     }
     
     function gotError( err ) // see more on error handling
     {
-      console.log( "error message - " + err.message );
-      console.log( "error code - " + err.statusCode );
+      // console.log( "error message - " + err.message );
+      // console.log( "error code - " + err.statusCode );
     }
     
     

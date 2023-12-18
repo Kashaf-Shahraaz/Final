@@ -17,8 +17,8 @@ function userRegistered( user )
 
 function gotError( err ) // see more on error handling
 {
-  console.log( "error message - " + err.message );
-  console.log( err.code );
+  // console.log( "error message - " + err.message );
+  // console.log( err.code );
 
 }
 

@@ -11,15 +11,15 @@ function loginHandler(e){
 
    function userLoggedIn( user )
 { 
-  console.log( "user has logged in" );
+  // console.log( "user has logged in" );
   setIsLoggedIn(true)
  navigate('/userDetails')
 }
 
 function gotError( err ) // see more on error handling
 {
-  console.log( "error message - " + err.message );
-  console.log( "error code - " + err.statusCode );
+  // console.log( "error message - " + err.message );
+  // console.log( "error code - " + err.statusCode );
 
 }
 
